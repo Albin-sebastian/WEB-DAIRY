@@ -93,3 +93,23 @@ body {
   margin-left: auto;
   margin-right: 15px;
 }
+
+/* Animate in */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: rotateX(60deg) translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) translateY(0px);
+  }
+}
+
+/* Animate out */
+.slideOut {
+  transform: rotateX(60deg) translateY(-10px);
+  opacity: 0;
+  transition: 1s;
+}
