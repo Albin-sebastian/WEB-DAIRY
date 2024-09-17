@@ -7,7 +7,7 @@ let addBtn = document.getElementById("add-btn");
 
 // Get the list element where we'll display the kitchen items
 let kitchenItemsList = document.getElementById("kitchen-items-list");
-
+// let trashBtn = document.createElement('i');
 // step-2
 // Define a function to add a new kitchen item
 const addKitchenItems = () => {
@@ -28,9 +28,22 @@ const addKitchenItems = () => {
 
   // Focus the input field so the user can start typing again
   kitchenInput.focus();
+
+  let trashBtn = document.createElement('i');
+  trashBtn.classList.add('fa', 'fa-trash');
+  li.appendChild(trashBtn)
+}
+
+const deleteKitchenItem = (e) => {
+  if (e.target.classList[0] == 'fa') {
+    let item = e.target.parentElement;
+    item.remove();
+  }
+
 }
 // step-1
 // Add an event listener to the "Add" button to call the addKitchenItems function when clicked
-addBtn.addEventListener('click', addKitchenItems)
+addBtn.addEventListener('click', addKitchenItems);
 
+kitchenItemsList.addEventListener('click', deleteKitchenItem);
 
