@@ -16,8 +16,12 @@ const addKitchenItems = () => {
 
   // Create a new list item element
   let li = document.createElement('li');
+  let spanEl = document.createElement('span');
+  li.appendChild(spanEl);
   // Set the text of the list item to the input data
-  li.innerText = kitchenInputData;
+  spanEl.innerText = kitchenInputData;
+
+
 
   li.style.cssText = "animation-name:slideIn;";
 
@@ -56,7 +60,10 @@ const editKitchenItem = (e) => {
   {
     let editValue = prompt('please add new text');
     let item = e.target.parentElement;
-    item.innerText = editValue;
+    console.log(item);
+
+    let spanEl = item.querySelector('span');
+    spanEl.innerText = editValue;
   }
 }
 // step-1
