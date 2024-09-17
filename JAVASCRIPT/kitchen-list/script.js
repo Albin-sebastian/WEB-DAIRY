@@ -23,7 +23,11 @@ const addKitchenItems = () => {
 
   // Add the list item to the list
   kitchenItemsList.appendChild(li);
+  // Clear the input field
+  kitchenInput.value = "";
 
+  // Focus the input field so the user can start typing again
+  kitchenInput.focus();
 }
 // step-1
 // Add an event listener to the "Add" button to call the addKitchenItems function when clicked
