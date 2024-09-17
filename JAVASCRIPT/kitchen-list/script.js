@@ -37,7 +37,11 @@ const addKitchenItems = () => {
 const deleteKitchenItem = (e) => {
   if (e.target.classList[0] == 'fa') {
     let item = e.target.parentElement;
-    item.remove();
+    item.classList.add('slideOut');
+    item.addEventListener('transitionend', () => {
+      item.remove();
+    })
+    // item.remove();
   }
 
 }
