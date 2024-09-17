@@ -19,7 +19,7 @@ const addKitchenItems = () => {
   // Set the text of the list item to the input data
   li.innerText = kitchenInputData;
 
-
+  li.style.cssText = "animation-name:slideIn;";
 
   // Add the list item to the list
   kitchenItemsList.appendChild(li);
