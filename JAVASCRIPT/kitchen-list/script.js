@@ -28,14 +28,19 @@ const addKitchenItems = () => {
 
   // Focus the input field so the user can start typing again
   kitchenInput.focus();
-
+  // create trash button
   let trashBtn = document.createElement('i');
   trashBtn.classList.add('fa', 'fa-trash');
-  li.appendChild(trashBtn)
-}
+  li.appendChild(trashBtn);
 
+  // create edit button
+  let editBtn = document.createElement('i');
+  editBtn.classList.add('fa', 'fa-edit');
+  li.appendChild(editBtn)
+}
+// delete item from kitchen list
 const deleteKitchenItem = (e) => {
-  if (e.target.classList[0] == 'fa') {
+  if (e.target.classList[0] == 'fa-trash') {
     let item = e.target.parentElement;
     item.classList.add('slideOut');
     item.addEventListener('transitionend', () => {
@@ -45,9 +50,19 @@ const deleteKitchenItem = (e) => {
   }
 
 }
+
+const editKitchenItem = (e) => {
+  if (e.target.classList[1] == 'fa-edit');
+  {
+    let editValue = prompt('please add new text');
+    let item = e.target.parentElement;
+    item.innerText = editValue;
+  }
+}
 // step-1
 // Add an event listener to the "Add" button to call the addKitchenItems function when clicked
 addBtn.addEventListener('click', addKitchenItems);
 
 kitchenItemsList.addEventListener('click', deleteKitchenItem);
 
+kitchenItemsList.addEventListener('click', editKitchenItem);
